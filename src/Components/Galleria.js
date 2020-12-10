@@ -14,11 +14,19 @@ const Galleria = ({ img }) => {
 
     }
     
+    
         return(
+            
             img.map((el1,i)=>{
                 return(
                     <>
-                <img src={el1.image} role="button" onClick={e => handleClick(e,el1.id)} style={{width:150,display:"inline"}}/>
+                   {el1.image != null ?
+                        <div key={i} className="col-sm-3">
+                           
+                            <img className="w100" src={el1.image} alt="immagine" role="button" onClick={e => handleClick(e,el1.id)} style={{height:70, marginTop:50}}/>
+                        </div>
+              : null}
+                
                 
                 {el1.id == curr ? 
                 
@@ -31,9 +39,10 @@ const Galleria = ({ img }) => {
                     
                      <>
 
-                     <div >
+                   
+                         
                          <img src={el1.image} style={{width:"100%",height:"auto"}}/>  
-                     </div>
+                   
                      </>
                     </>
                 </Modal.Body>

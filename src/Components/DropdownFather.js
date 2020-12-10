@@ -32,16 +32,14 @@ const DropdownFather = () => {
                         [`${datiJson.rows[i].places[0].name}`, `${datiJson.rows[i].dayDate}`]    
                     ]
                 )  
-               /*  arr.push(
-                    [{
-                        'name': `${datiJson.rows[i].places[0].name}`,
-                        'dated': `${datiJson.rows[i].dayDate}`
-                    }]
-                )   */
+
             }
         }
         return arr
     }  
+        
+   
+ 
         
    
     
@@ -52,23 +50,26 @@ const DropdownFather = () => {
             {tappe().map((el,j,elements) =>{ 
                
                  let des= []
+                 let g= []
                  for (let i = 0; i < datiJson.rows.length; i++) {  
                         if ((datiJson.rows[i].dayDate <= el[0][1])
                             && (datiJson.rows[i].places[0].name == el[0][0])){
                                if (j>0) {
                                     if(datiJson.rows[i].dayDate > elements[j-1][0][1]){
                                         des = des.concat(datiJson.rows[i]);
+                                        g = g.concat(i);
                                     }
                                }
                                else { 
                                         des = des.concat(datiJson.rows[i]); 
+                                        g = g.concat(i);
                                }
                       } 
                     }    
                     console.log(des)
                   return ( 
                     <li key={j}> <DropdownDays title={el[0][0]}
-                        desc={des} />       
+                        desc={des} day={g} />       
                     </li> 
                    
                     )

@@ -6,7 +6,7 @@ const DropdownTariffa = ({ title , totalprice ,  partecipanti , included , notin
 
 
     return (
-        <div className="dropdown-wrapper card">
+        <div className="dropdown-wrapper card p-3">
             <div className="dropdown-header" role="button" onClick={() => toggle(!open)}>
                 <div className="dropdown-header-title">
                     <p className="dropdown-header-title2">
@@ -24,19 +24,19 @@ const DropdownTariffa = ({ title , totalprice ,  partecipanti , included , notin
                 <div className="dropdown-list">
                     <div className="row mt-3">
                         <div className="col-md-4 uppercase">{partecipanti[0].type}</div>
-                        <div className="col-md-8 text-right text-grey">{partecipanti[0].price}€</div>
+                        <div className="col-md-8 text-right text-grey price">{partecipanti[0].price}€</div>
                     </div>
                     <div className="row">
                         <div className="col-md-4 uppercase">{partecipanti[1].type}</div>
-                        <div className="col-md-8 text-right text-grey">{partecipanti[1].price}€</div>
+                        <div className="col-md-8 text-right text-grey price">{partecipanti[1].price}€</div>
                     </div>
                     <div className="row">
                         <div className="col-md-4 uppercase">{partecipanti[2].type}</div>
-                        <div className="col-md-8 text-right text-grey">{partecipanti[2].price}€</div>
+                        <div className="col-md-8 text-right text-grey price">{partecipanti[2].price}€</div>
                     </div>
                     <div className="row">
                         <div className="col-md-4 uppercase">{partecipanti[3].type}</div>
-                        <div className="col-md-8 text-right text-grey">{partecipanti[3].price}€</div>
+                        <div className="col-md-8 text-right text-grey price">{partecipanti[3].price}€</div>
                     </div>
                     
                    
@@ -45,7 +45,7 @@ const DropdownTariffa = ({ title , totalprice ,  partecipanti , included , notin
                         <div className="col-md-12 text-right">
                             <strong>TOTALE</strong><br />
                             {/* funzione per mettere totale giusto */}
-                            <span className="text-yellow">{totalprice}</span> 
+                            <span className="text-yellow">{partecipanti[0].price * 4}</span> 
                         </div>
                     </div>
                     

@@ -14,8 +14,8 @@ const Accomodation = ({acco}) => {
      let curr = id;
      setCurr(id)
      
-    console.log("metodo", curr)
-    console.log("test",e.target)
+    //console.log("metodo", curr)
+    //console.log("test",e.target)
       setShow(true)
       
        
@@ -23,23 +23,31 @@ const Accomodation = ({acco}) => {
 
     return (
         acco.map((el2,i)=>{
-            console.log(el2)
+            //console.log(el2)
             return(
-            <div>
+            <div key={el2.id}>
                 
-            <div  key={el2.id} >
-              {console.log(el2.id)}
-              
-              <ImgCardGallery img2={el2.images}/> 
+            <div>
+          
+              <div className="row mt-4">
+              <div className="col-md-6 mt-2">
+                <div className="container-gallery">
+                <ImgCardGallery img2={el2.images}/> 
+                </div>
+              </div>
+
+              <div className="col-md-5 accdialog">
                 
                 <div role="button" onClick={e=>handleShow(e,el2.id)}>
-                <div>{el2.name}</div>
-                <div>
+                  <div><strong>{el2.name}</strong></div>
+                <div className="small-text">
                     {el2.description}
                 </div>
-                <div><a href='#'>Clicca qui per maggiori dettagli</a></div>
+                <div><br/>
+                <a style={{color:'#0063C9'}}>Clicca qui per maggiori dettagli</a></div>
                 <ButtonTag tipi={el2.tags} />
-                
+                </div>
+                </div>
                 </div>
                 </div>
                 
@@ -51,16 +59,22 @@ const Accomodation = ({acco}) => {
       </Modal.Header>
       <Modal.Body>
           <>
-              <div>{el2.typology}</div>
-              <div><ImgCardGallery img2={el2.images}/></div>
-              <p style={{margin: 10}}>Descrizione</p>
+              <div><strong>{el2.typology}</strong></div>
+              <div className="row">
+              <div className="col-md-12"><br/>
+              <div className="row p-2">
+                <ImgCardGallery img2={el2.images}/>
+                </div><br/> 
+              <p style={{marginTop: 10}}><strong>Descrizione</strong></p>
               <div>{el2.description}</div>
-              <p style={{margin: 10}}>Ristorante</p>
+              <p style={{marginTop: 10}}><strong>Ristorante</strong></p>
               <div>{el2.descriptionRestaurant}</div>
-              <p style={{margin: 10}}>Camere</p>
+              <p style={{marginTop: 10}}><strong>Camere</strong></p>
               <div>{el2.descriptionRooms}</div>
-              <p style={{margin: 10}}>Servizi</p>
-              <div>{el2.descriptionServices}</div>
+              <p style={{marginTop: 10}}><strong>Servizi</strong></p>
+              <div>{el2.descriptionServices}</div> 
+              </div>
+              </div>
           </>
       </Modal.Body>
       <Modal.Footer>

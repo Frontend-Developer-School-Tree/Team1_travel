@@ -1,11 +1,9 @@
 .dots {
     background-repeat: repeat-y;
-    height: 100%;
     background-size: 8px;
     width: 100%;
     background-position: 50%;
     background-image: url(http://51.77.82.133:86/images/Ellipse.png);
-    height:100%
 }
 
 .dropdown-header-title2 { 
@@ -22,13 +20,12 @@ padding:.75rem 1.25rem!important;
     margin-bottom:0px;
 }
 .contday {
-    border-top: 1px solid rgba(0,0,0,.125); 
     margin-top: 0.7em; 
-    padding-top: 1.5em; 
+    padding-top: 15px; 
 }
 .contday h3 {
     color: #FFB400;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 33px;
     font-weight: 700;
 }
@@ -39,17 +36,139 @@ padding:.75rem 1.25rem!important;
 }
 .desday {
     margin-top:15px;
+    margin-bottom:15px;
 }
 
 .typology-transfer {
     background-color: rgb(255, 180, 0);
+    font-size:40px;
     width:100px;
     height:100px;
-    text-align: center;
-}
-.transfer-center {
     line-height: 100px;
     text-align: center;
-    font-size: 40px;
-    display: block;
+    color:#666
 }
+.title-transfer {
+    font-size: 20px;
+    line-height: 23px;
+    font-weight:bold;
+}
+.luogo {
+    font-size:16px;
+    font-weight:bold;
+}
+.aereoporto {
+    border-radius: 50px!important;
+    border: 1px solid #0063C9;
+    padding: 5px 10px!important;
+    color: #0063C9;
+    margin-left: 2em;
+    background-color: #fff;
+    font-size:14px;
+    line-height: 1;
+}
+.tag {
+    border-radius: 50px;
+    border: 1px solid #0063C9;
+    padding: 5px 10px;
+    color: #0063C9;
+    background-color: #fff;
+    margin-right:15px;
+    font-size:14px;
+    line-height: 1;
+    margin-top:10px;
+}
+.acc, .included {
+    margin-top:2em;
+}
+.small-text {
+    font-size: 14px;
+    line-height: 18px;
+}
+.bgimg {
+    min-height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left:15px;
+}
+.bgimg:hover {
+    opacity: 0.6;
+}
+.container-image {
+    margin-right: 15px;
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: relative;
+}
+.container-image:hover {
+    opacity:0.6;
+}
+.container-gallery {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row nowrap;
+}
+.include {
+    white-space: pre-wrap;
+    font-size: 14px;
+}
+.notinclude {
+    white-space: pre-wrap;
+    font-size: 14px;
+}
+.day {
+    width: 57px;
+    height: 57px;
+    background-color: #ffb400;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100%;
+    position: relative;
+}
+.pinmap {
+    background-color: #b0dbee;
+    border-radius: 100%;
+    padding:5px;
+    margin:auto;
+    margin-top:15px;
+}
+.pinnoleggio_auto {
+    background-color: #ffb400;
+    border-radius: 100%;
+    padding:5px;
+    margin:auto;
+    margin-top:15px;
+    text-align: center;
+}
+.pin {
+    width: 34px;
+    height: 34px;
+}
+.white { background:#fff;}
+.autodialog, .accdialog { cursor:pointer; padding:15px; margin-right:15px;}
+.autodialog:hover, .accdialog:hover { box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); 
+}
+.ws {white-space: pre-wrap }
+.w100 { width:100%;}
+
+@media only screen and (max-width : 991px) {
+    .dropdown-header-title2 {
+        font-size: 20px;
+    }
+    .pinmap, .pinnoleggio_auto { display:none;} 
+    .contday {
+        margin-top: 0;
+    }
+    .day { margin-bottom:15px;} .dots {background:none;}
+    .aereoporto { margin-left:0;}
+    .typology-transfer {margin-bottom:15px; }
+    .dropdown-wrapper.card { padding:2em!important; }
+    .price { text-align:left!important}
+    .container-gallery { display:block; }
+    .w100 { width:105px;}
+  }

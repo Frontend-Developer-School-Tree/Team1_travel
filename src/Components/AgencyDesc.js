@@ -29,13 +29,6 @@ function AgencyDesc() {
                     Viale della Gioventù, 26 A - 95014 Giarre (Catania)<br/>
                     www.insicilia.it
                 </p>
-               {/*  <ul style={{marginTop:5}}>
-                    <li className="lista1">- Insolita Travels di InSicilia snc: Tour Operator Sicilia, DMC e Agenzia di Viaggi;</li>
-                    <li className="lista1">- Licenza Agenzia Viaggio nr. 2226/S2-TUR della Regione Siciliana;</li>
-                    <li className="lista1">- Polizza R.C. nr. 45130310-RC14 Europaische Reiserversicherung AG;</li>
-                    <li className="lista1">- InSicilia snc è iscritta all'Ufficio Registro Imprese di Catania N. REA 260386;</li>
-                    <li className="lista1">- Fondo Garanzia Viaggi: Certificato n. A/286.1059/1/R;</li>
-                </ul> */}
             </div>
         </div>
     </div>

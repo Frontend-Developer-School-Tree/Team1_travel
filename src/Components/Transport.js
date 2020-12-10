@@ -13,14 +13,20 @@ const Transport = ({ mezzo }) => {
         mezzo.map((el6,i)=>{
             return(
             <>
-                <div className="row" onClick={handleShow}>
-                                <div className="col-3">
-                                    <i className="fas fa-car-alt"></i>
+                <div key={i} className="row autodialog" onClick={handleShow}>
+                                <div className="col-md-3 col-sm-12">
+                                    <div className="typology-transfer"><i className="fas fa-car-alt transfer-center"></i></div>                                   
                                 </div>
-                                <div className="col-9">
-                                    <div>{el6.name}</div>
-                                    <div> LUOGO DI RITIRO {el6.pickup.name}</div>
-                                    <div>LUOGO DI RILASCIO {el6.return.name}</div>
+                                <div className="col-md-9 col-sm-12">
+                                <div className="title-transfer">{el6.name}</div>
+                                    <div className="row mt-2">
+                                    <div className="col-md-5 col-sm-12"><span className="luogo">LUOGO DI RITIRO</span></div> 
+                                    <div className="col-md-7 col-sm-12"><a className="btn btn-primary aereoporto">{el6.pickup.name}</a></div>
+                                    </div>
+                                    <div className="row mt-2">
+                                    <div className="col-md-5 col-sm-12"> <span className="luogo">LUOGO DI RILASCIO</span> </div>
+                                    <div className="col-md-7 col-sm-12"><a className="btn btn-primary aereoporto">{el6.return.name}</a></div>
+                                    </div> 
                                 </div>
                                 </div>
                                 <Modal show={show} onHide={handleClose}>
@@ -32,12 +38,12 @@ const Transport = ({ mezzo }) => {
                                         <i className="fas fa-car-alt" id="carModal"></i>
                                         <p>Tipologia Auto {el6.typology_auto}</p>
                                         <div> Luogo di ritiro: <a href="#">{el6.pickup.name}</a></div>
-                                        <div>Data di ritiro:<a href="#">{el6.withdrawalDate}</a></div>
+                                        <div>Data di ritiro: <a href="#">{el6.withdrawalDate.split("-").reverse().join(".")}</a></div>
                                         <div>Luogo di Rilascio: <a href="#">{el6.return.name}</a></div>
-                                        <div>Data di rilascio: <a href="#">{el6.releaseDate}</a></div>
-                                        <p style={{margin:10}}> IL NOLEGGIO AUTO COMPRENDE  </p>
+                                        <div>Data di rilascio: <a href="#">{el6.releaseDate.split("-").reverse().join(".")}</a></div>
+                                        <p style={{marginTop:10}}> IL NOLEGGIO AUTO COMPRENDE  </p>
                                         <ul>
-                                        <li>{el6.rentIncluded}</li>
+                                        <li className="ws">{el6.rentIncluded}</li>
                                         </ul>
                                         <div>SITO WEB <a href="#">{el6.contact.website}</a></div>
                                         
@@ -45,7 +51,7 @@ const Transport = ({ mezzo }) => {
                                 </Modal.Body>
                                 <Modal.Footer>
                                 <Button variant="secondary" onClick={handleClose}>
-                                    Close
+                                    Chiudi
                                 </Button>
                                 </Modal.Footer>
                             </Modal>

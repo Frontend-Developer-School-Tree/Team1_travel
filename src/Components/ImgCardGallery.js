@@ -20,7 +20,11 @@ const ImgCardGallery = ({ img2 }) => {
         img2.map((el1,i)=>{
             return(
                 <>
-            <img role="button" onClick={e=>handleShow(e,el1.id)} src={el1.image} style={{width:200}}/>
+            {el1.image != null ?
+            <div key={el1.id} role="button" onClick={e=>handleShow(e,el1.id)} className="container-image" style={{
+                    backgroundImage: `url(${el1.image})`,width:150, marginTop:5}}>
+                      </div>   
+            : null }
         
 
             {el1.id == curr ? 
@@ -34,9 +38,12 @@ const ImgCardGallery = ({ img2 }) => {
                     
                      <>
 
-                     <div>
+                     <div key={el1.id}>
                          <img src={el1.image} style={{width:"100%"}}/>
+                         <div className="row">
                          <Galleria img={img2}/>
+                         </div>
+                         
                  
 
                          

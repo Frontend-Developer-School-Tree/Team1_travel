@@ -1,6 +1,5 @@
 import React,{ useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
 
 const ImgCard = ({ img }) => {
     const [show, setShow] = useState(false);
@@ -11,18 +10,24 @@ const ImgCard = ({ img }) => {
         setShow(true)
     }
 
-    
+    const leng = img.length
+    let col = ''
+    leng > 1 ? col = 'col-md-5 bgimg mr-4' : col = 'col-md-11 bgimg'
 
     return (
         img.map((el1,i)=>{
             return(
-                <>
-                <div role="button" onClick={e=>handleClick(e,el1.id)}>
-                    <img src={el1.image} style={{width:'100%'}}/>
-                </div>
-                 
-                {el1.id == curr ? 
+                < >
                 
+                 <div key={i}  role="button" onClick={e=>handleClick(e,el1.id)} style={{
+                    backgroundImage: `url(${el1.image})`,
+                    backgroundSize: "cover"}} 
+                    className={`${col}`}> 
+                 </div>
+               
+                 
+                {el1.id === curr ? 
+                <div >
                 <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                   <Modal.Title></Modal.Title>
@@ -33,18 +38,17 @@ const ImgCard = ({ img }) => {
                      <>
 
                      <div >
-                         <img src={el1.image} style={{width:"100%"}}/>  
+                         <img src={el1.image} alt="immagine" style={{width:"100%"}}/>  
                      </div>
                      </>
                     </>
                 </Modal.Body>
                 <Modal.Footer>
-                  {/* <Button variant="secondary" onClick={handleClose}>
-                    Chiudi
-                  </Button> */}
                 </Modal.Footer>
               </Modal>
+              </div>
                :  null }
+               
                 </>)
           })  
     )

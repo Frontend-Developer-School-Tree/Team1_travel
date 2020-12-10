@@ -44,7 +44,7 @@ export default function NewTry({tipi}) {
         <DialogContent>
           <DialogContentText>
             <hr />
-            <strong>hotel</strong> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <br /> <br />
+            <strong>hotel</strong> <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i> <br /> <br />
             <div className="row">
             {tipi[1].images.map(el =>{
                 return <div className="col-md-4"><img src={el.image} style={{width:'100%',height:120}}/> <br /> <br /></div>
